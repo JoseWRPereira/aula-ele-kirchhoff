@@ -1,6 +1,11 @@
 \section{Leis de Kirchhoff}
 
+As leis de Kirchhoff são utilizadas para analisar circuitos de forma a poder obter valores de parâmetros elétricos em pontos ou componentes específicos de um circuito.
+
 A \textbf{primeira lei de Kirchhoff} fala sobre as correntes em um nó, por isso é comum ser chamada de \textbf{lei dos nós}, enquanto que a \textbf{segunda lei de Kirchhoff} fala sobre as tensões em uma malha, sendo assim a \textbf{lei das malhas}.
+
+
+
 
 
 \subsection{1ª Lei de Kirchhoff}
@@ -47,52 +52,6 @@ I_1 + I_2 & = & I_T \nonumber
 
 
 
-\subsection{A divisão da corrente no nó}
-
-A intensidade da corrente que circula em um ramo, depende da tensão aplicada aos seus nós e da resistência total do ramo. Assim, para o circuito da Figura \ref{fig:paralelo} (a) a corrente total depende apenas do valor de $V_{CC}$ e $R_1$.
-
-Não havendo mudanças em $V_{CC}$ ou $R_1$, não haverá mudança no valor da intensidade de corrente, denotada $I_T$. A intensidade da corrente que flui da fonte é a mesma que atravessa a carga, com uma certa resistência e condutância.
-
-Ao inserir outro ramo ao circuito, como mostrado na Figura \ref{fig:paralelo}(b), a intensidade da corrente no ramo de $R_1$ não é alterado, pois a tensão entre os pontos $A$ e $B$ não muda, bem como seu valor ôhmico, porém, a intensidade total da corrente muda, pois há agora um novo caminho, um novo ramo para circulação da corrente.
-
-\begin{figure}[!h]
-	\centering
-	\caption{Circuito em paralelo}
-	\includegraphics[scale=1.0]{fig-paralelo}
-	\label{fig:paralelo}
-\end{figure}
-
-A mudança do circuito (a) para o (b), do ponto de vista da corrente, produz um novo caminho para a circulação da corrente. Pode-se dizer então que com a inclusão do novo ramo, conectado aos mesmos pontos do ramo já existente, há agora uma maior facilidade para a corrente fluir, pois agora são dois caminhos.
-
-Podemos obter a condutância total do circuito paralelo somando as condutâncias dos ramos, da seguinte forma:
-
-\begin{eqnarray}
-  G_T & = & G_{R_1} + G_{R_2}
-\label{eqn:GT}
-\end{eqnarray}
-
-Produzindo a condutância total do circuito.
-
-Substituindo (\ref{eqn:GinvR}) em (\ref{eqn:GT}) para a resistência total temos:
-
-\begin{eqnarray}
-  \frac{1}{R_T}	& = & \frac{1}{R_1} + \frac{1}{R_2} \nonumber\\
-	\nonumber\\
-	R_T & = & \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} }
-\end{eqnarray}
-
-
-Da mesma forma pode-se aplicar para circuitos com varios ramos em paralelo, basta somar as condutâncias:
-
-\begin{eqnarray}
-	G_T & = & G_1 + G_2 + ... + G_n
-\end{eqnarray}
-
-Analogamente para a resistência total temos:
-
-\begin{eqnarray}
-	R_T & = & \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + ... + \frac{1}{R_n} }
-\end{eqnarray}
 
 %\newpage
 
@@ -150,7 +109,7 @@ Isolando-se $V_{R1}$  temos:
 \begin{eqnarray}
 V_{R1} & = & \frac{R_1}{R_2 + R_1} . V_{AB}
 \end{eqnarray}
-Iguanlmente para $V_{R2}$:
+Igualmente para $V_{R2}$:
 \begin{eqnarray}
 V_{R2} & = & \frac{R_2}{R_2 + R_1} . V_{AB}
 \end{eqnarray}
