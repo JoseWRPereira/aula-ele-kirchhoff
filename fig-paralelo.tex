@@ -1,0 +1,65 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{tikz, tkz-euclide}
+\usepackage[european,siunitx]{circuitikz}
+
+\begin{document}
+
+\begin{minipage}{\linewidth}
+  \centering
+  \begin{minipage}{0.45\linewidth}
+
+		\begin{tikzpicture}
+			\tkzDefPoints{
+			0.0/3.0/D,	2.0/3.0/E,
+			0.0/0.0/A,  2.0/0.0/B}
+			 \draw[color=black] (A) -- (B);
+			 \draw[color=black] (D) -- (E);
+			 \draw[color=black] (D) to[battery,l_=$V_{CC}$]  (A);
+			 \draw[color=black] (B) to[R,l=$R_1$,*-*] (E);
+%			 \draw[color=black] (C) to[R,l=$R_2$,-] (F);
+			 \draw[color=black] (D) to[short,i>=$I_T$,-*] (E);
+%			 \draw[color=black] (E) to[short,i>=$I_2$,-] (F);
+%			 \draw[color=black] (E) to[short,i>=$I_T$,-] (2.0,2.05);
+       \draw[color=black] (B) to[short,i>=$I_T$,*-] (A);
+%       \draw[color=black] (C) to[short,i>=$I_2$,-] (B);
+%       \draw[color=black] (B) to[short,i<=$I_T$,-] (2.0,0.95);
+%			 \draw[color=black] (F) to[short,-] (4.0,2.05);
+			 \draw[color=black] (D) to[short,-] (0.0,1.75);
+			 \node[green] (_PA) at (2,3.3) {A};
+			 \node[green] (_PB) at (2,-0.3) {B};
+			 \node[black] (_PL) at (1,-1) {(a) Um caminho para a I};
+		\end{tikzpicture}
+
+  \end{minipage}
+  \hspace{0.05\linewidth}
+  \begin{minipage}{0.45\linewidth}
+
+    \begin{tikzpicture}
+			\tkzDefPoints{
+			0.0/3.0/D,	2.0/3.0/E,	4.0/3.0/F,
+			0.0/0.0/A,  2.0/0.0/B,  4.0/0.0/C}
+			 \draw[color=black] (A) -- (C);
+			 \draw[color=black] (D) -- (F);
+			 \draw[color=black] (D) to[battery,l_=$V_{CC}$]  (A);
+			 \draw[color=black] (B) to[R,l=$R_1$,*-*] (E);
+			 \draw[color=black] (C) to[R,l=$R_2$,-] (F);
+			 \draw[color=black] (D) to[short,i>=$I_T$,-*] (E);
+			 \draw[color=black] (E) to[short,i>=$I_2$,-] (F);
+			 \draw[color=black] (E) to[short,i>=$I_1$,-] (2.0,2.05);
+       \draw[color=black] (B) to[short,i>=$I_T$,*-] (A);
+       \draw[color=black] (C) to[short,i>=$I_2$,-] (B);
+       \draw[color=black] (B) to[short,i<=$I_1$,-] (2.0,0.95);
+			 \draw[color=black] (F) to[short,-] (4.0,2.05);
+			 \draw[color=black] (D) to[short,-] (0.0,1.75);
+			 \node[green] (_PA) at (2,3.3) {A};
+			 \node[green] (_PB) at (2,-0.3) {B};
+			 \node[black] (_PL) at (2,-1) {(b) Dois caminhos para a I};
+		\end{tikzpicture}
+
+  \end{minipage}
+\end{minipage}
+
+
+\end{document}

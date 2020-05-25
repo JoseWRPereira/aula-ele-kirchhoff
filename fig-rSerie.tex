@@ -1,0 +1,44 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{tikz, tkz-euclide}
+\usepackage[european,siunitx]{circuitikz}
+
+\begin{document}
+
+\begin{minipage}{\linewidth}
+  \centering
+  \begin{minipage}{0.45\linewidth}
+    \centering
+    \begin{tikzpicture}
+  	\tkzDefPoints{
+  		0.0/4.0/E,
+      0.0/2.0/C,
+      0.0/0.0/A}
+    \draw[color=black] (C) to[R,l=$R_1$,-*] (E);
+  	\draw[color=black] (A) to[R,l=$R_2$,*-] (C);
+  	\node[green,above] (_PA) at (E) {A};
+    \node[green,below] (_PB) at (A) {B};
+    \node[black] (_PL) at (0,-1) {(a) Associação em Série};
+
+  	\end{tikzpicture}
+
+  \end{minipage}
+  \hspace{0.05\linewidth}
+  \begin{minipage}{0.45\linewidth}
+    \centering
+    \begin{tikzpicture}
+  	\tkzDefPoints{
+  		0.0/4.0/E, 0.0/2.0/C, 0.0/0.0/A}
+    \draw[color=black] (A) to[R,l=$R_{eq}$,*-*] (E);
+  	\node[green,above] (_PA) at (E) {A};
+    \node[green,below] (_PB) at (A) {B};
+    \node[black] (_PL) at (0,-1) {(b) Resistência Equivalente};
+
+  	\end{tikzpicture}
+
+  \end{minipage}
+\end{minipage}
+
+
+\end{document}

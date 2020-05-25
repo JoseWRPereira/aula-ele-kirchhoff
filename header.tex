@@ -1,0 +1,31 @@
+\begin{tikzpicture}[remember picture, overlay]
+		\node(LogoE) at (current page.north west) [anchor=north west,xshift=1.5cm, yshift=-1cm]{\includegraphics[width=2.5cm]{logoE}};
+
+		\node(LogoD) at (current page.north east) [anchor=north east,xshift=-1.5cm, yshift=-1cm]{\includegraphics[width=2.5cm]{logoD}};
+
+		\node(Titulo) at (LogoE.north east) [anchor=north west, minimum width=\linewidth-5.5cm, align=center, yshift=1mm]
+		{\huge Análise de circuitos\\Resistência Equivalente Total};
+
+		\node (Turma) at (Titulo.south)[anchor=north]
+		{Eletricidade - ELE};
+
+		\node(Data) at (Titulo.south) [anchor=center, yshift=-.7cm]
+		{Maio / 2020};
+
+		\node(Linha) at (Titulo.center)[anchor=center, yshift=-1.7cm]{\rule{10cm}{.8mm}};
+
+		\node(Autor) at (Titulo.south west) [anchor=north west, xshift=1cm, yshift=-1.1cm]
+		{José W. R. Pereira};
+
+		\node(email) at (Titulo.south east) [anchor=north east, xshift=-1cm, yshift=-1.1cm]
+		{josewrpereira.github.io/ddp/};
+
+		\begin{pgfonlayer}{background}
+			\draw[color=teal, fill=gray!10 ]
+			([yshift=2mm, xshift=-2mm]
+			LogoE.north west) rectangle
+			([xshift=2mm, yshift=-2mm]
+			LogoD.south east);
+		\end{pgfonlayer}
+
+\end{tikzpicture}

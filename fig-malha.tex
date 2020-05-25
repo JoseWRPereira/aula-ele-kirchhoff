@@ -1,0 +1,61 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{tikz, tkz-euclide}
+\usepackage[european,siunitx]{circuitikz}
+
+\begin{document}
+
+\begin{minipage}{\linewidth}
+  \centering
+  \begin{minipage}{0.45\linewidth}
+
+    \begin{tikzpicture}
+  	\tkzDefPoints{
+  		0.0/6.0/E,	3.0/6.0/F,
+  		0.0/3.0/C,	3.0/3.0/D,
+  		0.0/0.0/A,	3.0/0.0/B}
+    \draw[color=lightgray, line width=1pt] (D) to[R,l=$R_1$,-] (F);
+  	\draw[color=lightgray, line width=1pt] (B) to[R,l=$R_2$,-] (D);
+    \draw[color=lightgray, line width=1pt] (E) to[short,*-] (F);
+    \draw[color=lightgray, line width=1pt] (B) to[short,-*] (A);
+    \draw[color=lightgray, line width=1pt] (3,3.5) to[short,i>=$I_1$,-] (3,2.5);
+    \draw[color=black, line width=1pt] (E) to[battery,l=$V_{CC}$,*-*]  (A);
+  	\node[green,above] (_PA) at (E) {A};
+  	\node[green,below] (_PB) at (A) {B};
+    \node[black] (_PL) at (1.5,-1) {(a) Ramo da fonte};
+
+    \draw [->,shorten >= 1.5mm,shorten <=1.5mm,>=stealth,red,line width=2pt] (0,1.5) to [out=55, in=-55] (0,4.5);
+
+  	\end{tikzpicture}
+
+  \end{minipage}
+  \hspace{0.05\linewidth}
+  \begin{minipage}{0.45\linewidth}
+
+    \begin{tikzpicture}
+  	\tkzDefPoints{
+  		0.0/6.0/E,	3.0/6.0/F,
+  		0.0/3.0/C,	3.0/3.0/D,
+  		0.0/0.0/A,	3.0/0.0/B}
+  	\draw[color=lightgray] (E) to[battery,l=$V_{CC}$]  (A);
+    \draw[color=black, line width=1pt] (D) to[R,l=$R_1$,-] (F);
+  	\draw[color=black, line width=1pt] (B) to[R,l=$R_2$,-] (D);
+    \draw[color=black, line width=1pt] (E) to[short,*-] (F);
+    \draw[color=black, line width=1pt] (B) to[short,-*] (A);
+    \draw[color=black, line width=1pt] (3,3.5) to[short,i>=$I_1$,-] (3,2.5);
+  	\node[green,above] (_PA) at (E) {A};
+    \node[green,below] (_PB) at (A) {B};
+    \node[black] (_PL) at (1.5,-1) {(b) Ramo da carga};
+    \draw [->,shorten >= 1.5mm,shorten <=1.5mm,>=stealth,red,line width=2pt] (3,0.2) to [out=55, in=-55] (3,2.8);
+    \node[red,right] (_PVR1) at (3.5,4.5) {$V_{R1}$};
+    \draw [->,shorten >= 1.5mm,shorten <=1.5mm,>=stealth,red,line width=2pt] (3,3.2) to [out=55, in=-55] (3,5.8);
+    \node[red,right] (_PVR2) at (3.5,1.5) {$V_{R2}$};
+
+  	\end{tikzpicture}
+
+  \end{minipage}
+\end{minipage}
+
+
+\end{document}

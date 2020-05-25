@@ -1,0 +1,59 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{tikz, tkz-euclide}
+\usepackage[european,siunitx]{circuitikz}
+
+\begin{document}
+
+\begin{minipage}{\linewidth}
+  \centering
+  \begin{minipage}{0.45\linewidth}
+
+		\begin{tikzpicture}
+			\tkzDefPoints{
+			0.0/3.0/D,	2.0/3.0/E,	4.0/3.0/F,
+			0.0/0.0/A,  2.0/0.0/B,  4.0/0.0/C}
+			 \draw[color=lightgray] (A) -- (C);
+			 \draw[color=lightgray] (D) -- (F);
+			 \draw[color=lightgray] (D) to[battery,l_=$V_{CC}$]  (A);
+			 \draw[color=lightgray] (B) to[R,l=$R_1$,*-*] (E);
+			 \draw[color=lightgray] (C) to[R,l=$R_2$,-] (F);
+			 \draw[color=black, line width=1pt] (D) to[short,i>=$I_T$,-*] (E);
+			 \draw[color=black, line width=1pt] (E) to[short,i>=$I_2$,-] (F);
+			 \draw[color=black, line width=1pt] (E) to[short,i>=$I_1$,-] (2.0,2.05);
+			 \draw[color=black, line width=1pt] (F) to[short,-] (4.0,2.05);
+			 \draw[color=black, line width=1pt] (D) to[short,-] (0.0,1.75);
+			 \node[green] (_PA) at (2,3.3) {A};
+			 \node[white] (_PB) at (2,-0.3) {B};
+			 \node[black] (_PL) at (2,-1) {(a) Nó superior};
+		\end{tikzpicture}
+
+  \end{minipage}
+  \hspace{0.05\linewidth}
+  \begin{minipage}{0.45\linewidth}
+
+		\begin{tikzpicture}
+			\tkzDefPoints{
+			0.0/3.0/D,	2.0/3.0/E,	4.0/3.0/F,
+			0.0/0.0/A,  2.0/0.0/B,  4.0/0.0/C}
+			 \draw[color=lightgray] (A) -- (C);
+			 \draw[color=lightgray] (D) -- (F);
+			 \draw[color=lightgray] (D) to[battery,l_=$V_{CC}$]  (A);
+			 \draw[color=lightgray] (B) to[R,l=$R_1$,*-*] (E);
+			 \draw[color=lightgray] (C) to[R,l=$R_2$,-] (F);
+			 \draw[color=black, line width=1pt] (B) to[short,i>=$I_T$,*-] (A);
+			 \draw[color=black, line width=1pt] (C) to[short,i>=$I_2$,-] (B);
+			 \draw[color=black, line width=1pt] (B) to[short,i<=$I_1$,-] (2.0,0.95);
+			 \draw[color=black, line width=1pt] (C) to[short,-] (4.0,0.95);
+			 \draw[color=black, line width=1pt] (A) to[short,-] (0.0,1.25);
+			 \node[white] (_PA) at (2,3.3) {A};
+			 \node[green] (_PB) at (2,-0.3) {B};
+			 \node[black] (_PL) at (2,-1) {(b) Nó inferior};
+		\end{tikzpicture}
+
+  \end{minipage}
+\end{minipage}
+
+
+\end{document}

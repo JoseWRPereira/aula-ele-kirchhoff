@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{tikz, tkz-euclide}
+\usepackage[european,siunitx]{circuitikz}
+
+\begin{document}
+	\begin{circuitikz}
+		\tkzDefPoints{
+%			0.0/6.0/P03,	2.0/6.0/P13,	4.0/6.0/P23,	6.0/6.0/P33,
+			0.0/4.0/P02,	2.0/4.0/P12,	4.0/4.0/P22,	6.0/4.0/P32,
+			0.0/2.0/P01,	2.0/2.0/P11,	4.0/2.0/P21,	6.0/2.0/P31,
+			0.0/0.0/P00,	2.0/0.0/P10,	4.0/0.0/P20,	6.0/0.0/P30}
+
+		\draw[color=black] (P02) to[short,-] (P12);
+		\draw[color=black] (P12) to[short,-] (P11);
+		\draw[color=black] (P30) to[short,-] (P00);
+
+	  \draw[color=black] (P02) to[battery1,l_=$V_{cc}$,-] (P00);
+		\draw[color=black] (P32) to[R,l=$R_3$, - ] (P31);
+		\draw[color=black] (P11) to[R,l=$R_5$, - ] (P10);
+		\draw[color=black] (P31) to[R,l=$R_7$, - ] (P30);
+
+		\draw[color=black] (P12) to[R,l=$R_1$,*- ] (P22);
+		\draw[color=black] (P22) to[R,l=$R_2$, - ] (P32);
+		\draw[color=black] (P11) to[R,l=$R_4$,*-*] (P31);
+
+		\draw[color=black] (P31) to[R,l=$R_6$,*-*] (P10);
+
+	\end{circuitikz}
+\end{document}
