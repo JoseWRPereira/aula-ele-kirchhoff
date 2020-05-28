@@ -1,0 +1,34 @@
+\documentclass{standalone}
+\usepackage{tikz, tkz-euclide}
+\usepackage[european,siunitx]{circuitikz}
+
+\begin{document}
+	\begin{circuitikz}
+		\tkzDefPoints{
+			0.0/6.0/P03,	2.0/6.0/P13,	4.0/6.0/P23,	6.0/6.0/P33,
+			0.0/4.0/P02,	2.0/4.0/P12,	4.0/4.0/P22,	6.0/4.0/P32,
+			0.0/2.0/P01,	2.0/2.0/P11,	4.0/2.0/P21,	6.0/2.0/P31,
+			0.0/0.0/P00,	2.0/0.0/P10,	4.0/0.0/P20,	6.0/0.0/P30}
+
+		\draw[color=lightgray] (P13) to[short,-] (P03);
+		\draw[color=lightgray] (P10) to[short,-] (P00);
+
+	  \draw[color=lightgray] (P03) to[battery1,l_=$V_{cc}$,-] (P00);
+		\draw[color=black,line width=1pt] (P13) to[R,l=$R_B$,*-*] (P11);
+		\draw[color=black,line width=1pt] (P11) to[R,l=$R_C$,*-*] (P10);
+
+		\node[teal] (_PLA) at (2,6.3) {A};
+		\node[teal] (_PLB) at (2,-0.3) {B};
+		\node[teal] (_PLC1) at (1.7,2) {C};
+
+		\draw [->,shorten >= 1.5mm,shorten <=1.5mm,>=stealth,blue,line width=1pt] (0.5,6.2) to [out=0, in=180] (1.5,6.2);
+		\node[blue] (_PIT) at (1.0,6.5) {$I_T$};
+
+		\draw [->,shorten >= 1.5mm,shorten <=1.5mm,>=stealth,red,line width=1pt] (2.0,2.0) to [out=115, in=-115] (2.0,6.0);
+		\node[red] (_PVRB) at (1.1,4.0) {$V_{R_B}$};
+
+		\draw [->,shorten >= 1.5mm,shorten <=1.5mm,>=stealth,red,line width=1pt] (2.0,0.0) to [out=135, in=-135] (2.0,2.0);
+		\node[red] (_PVRA) at (1.2,1.0) {$V_{R_C}$};
+
+	\end{circuitikz}
+\end{document}

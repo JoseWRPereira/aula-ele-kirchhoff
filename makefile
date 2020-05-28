@@ -24,22 +24,15 @@ fig-desafioPasso3.aux \
 fig-desafioPasso4.aux \
 fig-desafioPasso5.aux \
 fig-desafioPasso6.aux \
+fig-desafioPasso7.aux \
+fig-desafioPasso8.aux \
+fig-desafioPasso9.aux \
+fig-desafioPassoA.aux \
+fig-desafioPassoB.aux \
+fig-desafioPassoC.aux \
 fig-ativ1.aux \
 fig-ativ2.aux \
 fig-ativ3.aux
-
-#fig-circuitoDesafioFonteCarga.aux \
-fig-circuitoSimples.aux \
-fig-circuitoDesafioNoSup.aux \
-fig-circuitoDesafioNoInf.aux \
-fig-circuitoDesafioRamoRLED.aux \
-fig-circuitoDesafioRamoRL.aux \
-fig-circuitoDesafioRamoFonte.aux \
-fig-circuitoExemplo.aux \
-fig-ativ1.aux \
-fig-ativ2.aux \
-fig-ativ3.aux \
-fig-ativ4.aux
 
 
 artigo: CLR
